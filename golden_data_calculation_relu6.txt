@@ -1,0 +1,29 @@
+Explanation of Golden Data Calculation for FloatAddActivationRelu6
+
+The `FloatAddActivationRelu6` test case verifies the addition operator with a ReLU6 activation function.
+ReLU6(x) = min(max(0, x), 6)
+
+**Inputs:**
+Input 1: {-2.0, 0.2, 7.0, 0.8}
+Input 2: { 0.1, 0.2, 0.3, 5.5}
+
+**Step-by-Step Calculation:**
+
+1.  **Index 0:**
+    *   Addition: -2.0 + 0.1 = -1.9
+    *   Activation: min(max(0, -1.9), 6) = 0.0
+
+2.  **Index 1:**
+    *   Addition: 0.2 + 0.2 = 0.4
+    *   Activation: min(max(0, 0.4), 6) = 0.4
+
+3.  **Index 2:**
+    *   Addition: 7.0 + 0.3 = 7.3
+    *   Activation: min(max(0, 7.3), 6) = 6.0
+
+4.  **Index 3:**
+    *   Addition: 0.8 + 5.5 = 6.3
+    *   Activation: min(max(0, 6.3), 6) = 6.0
+
+**Resulting Golden Values:**
+{0.0, 0.4, 6.0, 6.0}
