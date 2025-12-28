@@ -71,3 +71,43 @@ Here is a summary of the tests covered:
 
 19. **QuantizedAddWithMixedBroadcastInt16**:
     -   Tests 16-bit quantized integer addition with mixed broadcasting.
+
+20. **FloatAddBroadcast_2x2_1x2**:
+    -   Tests Float32 addition with broadcasting: [2, 2] + [1, 2].
+    -   Verifies that the second tensor is correctly broadcasted along the first dimension.
+
+21. **FloatAddBroadcast_2x2_2x1**:
+    -   Tests Float32 addition with broadcasting: [2, 2] + [2, 1].
+    -   Verifies that the second tensor is correctly broadcasted along the second dimension.
+
+22. **FloatAdd3D_Simple**:
+    -   Tests Float32 addition with 3D tensors: [2, 1, 2] + [2, 1, 2].
+    -   Verifies basic addition in 3D without broadcasting (same shapes).
+
+23. **FloatAdd4D_Simple**:
+    -   Tests Float32 addition with 4D tensors: [1, 2, 1, 2] + [1, 2, 1, 2].
+    -   Verifies basic addition in 4D.
+
+24. **FloatAddActivationReluN1To1_New**:
+    -   Tests Float32 addition with ReluN1To1 activation (explicit test).
+    -   Verifies output is clamped to range [-1.0, 1.0].
+
+25. **Int8AddSimple**:
+    -   Tests Int8 addition without activation.
+    -   Verifies basic addition of positive and negative numbers.
+
+26. **Int8AddClampingPositive**:
+    -   Tests Int8 addition with potential positive overflow.
+    -   Verifies that results > 127 are clamped to 127 (max int8).
+
+27. **Int8AddClampingNegative**:
+    -   Tests Int8 addition with potential negative overflow.
+    -   Verifies that results < -128 are clamped to -128 (min int8).
+
+28. **Int16AddSimple**:
+    -   Tests Int16 addition without activation.
+    -   Verifies basic addition of positive and negative numbers.
+
+29. **Int16AddClamping**:
+    -   Tests Int16 addition with potential overflow (both positive and negative).
+    -   Verifies clamping to Int16 limits (32767, -32768).
