@@ -1,0 +1,31 @@
+Testing FloatAddNoActivation
+Testing FloatAddActivationRelu1
+Testing FloatAddActivationRelu
+Testing FloatAddActivationRelu6
+Testing FloatAddVariousInputShapes
+Testing FloatAddWithScalarBroadcast
+Testing Int32AddNoActivation
+Testing QuantizedAddNoActivationInt8
+Testing QuantizedAddActivationRelu1Int8
+Testing QuantizedAddActivationReluInt8
+Testing QuantizedAddVariousInputShapesInt8
+Testing QuantizedAddWithScalarBroadcastFloat
+Testing QuantizedAddWithScalarBroadcastInt8
+Testing QuantizedAddWithMixedBroadcastInt8
+Testing QuantizedAddNoActivationInt16
+Testing QuantizedAddActivationRelu1Int16
+Testing QuantizedAddVariousInputShapesInt16
+Testing QuantizedAddWithScalarBroadcastInt16
+Testing QuantizedAddWithMixedBroadcastInt16
+Testing FloatAddBroadcast_2x2_1x2
+Testing FloatAddBroadcast_2x2_2x1
+Testing FloatAdd3D_Simple
+Testing FloatAdd4D_Simple
+Testing FloatAddActivationReluN1To1_New
+Testing Int8AddSimple
+Testing Int8AddClampingPositive
+Testing Int8AddClampingNegative
+Testing Int16AddSimple
+Testing Int16AddClamping
+29/29 tests passed
+~~~ALL TESTS PASSED~~~
