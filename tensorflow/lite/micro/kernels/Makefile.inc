@@ -38,6 +38,9 @@ $(eval $(call microlite_test,kernel_transpose_conv_test,\
   $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/conv_test_common.cc,\
   $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/conv_test.h))
 
+$(eval $(call microlite_test,kernel_pow_test,\
+$(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pow_test.cc))
+
 $(eval $(call microlite_test,kernel_lstm_eval_test,\
   $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/lstm_eval_test.cc \
   $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/testdata/lstm_test_data.cc,\
