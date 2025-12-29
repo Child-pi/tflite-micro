@@ -1,0 +1,17 @@
+How to build TFLite Micro with CMSIS-NN optimized kernels
+
+1. **Prerequisites**:
+   - Python dependencies: `numpy`, `pillow`.
+   - Run `install_cm.sh` to install them.
+
+2. **Building**:
+   - To build the kernels with CMSIS-NN optimization, you need to pass `OPTIMIZED_KERNEL_DIR=cmsis_nn` to the make command.
+   - This tells the build system to look into `tensorflow/lite/micro/kernels/cmsis_nn` for optimized implementations and also download/include the CMSIS-NN library headers and sources.
+   - Run `build_cm.sh` to perform the build for the `kernel_add_test` target.
+
+3. **Running**:
+   - The build output is stored in a directory suffixed with `_cmsis_nn`.
+   - Run `run_cm.sh` to execute the generated test binary.
+
+**Note on Architecture**:
+CMSIS-NN is designed for ARM Cortex-M processors. Building and running this on an x86_64 host (linux) works if the CMSIS-NN library includes reference C implementations that compile on x86, or if the specific kernels have fallbacks. If the build relies on ARM assembly or intrinsics not supported by the host compiler, the build or execution might fail or require a specific cross-compilation toolchain and emulator (like qemu).
