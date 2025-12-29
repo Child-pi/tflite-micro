@@ -1,0 +1,12 @@
+tensorflow/lite/micro/tools/make/downloads/flatbuffers already exists, skipping the download.
+tensorflow/lite/micro/tools/make/downloads/kissfft already exists, skipping the download.
+tensorflow/lite/micro/tools/make/downloads/pigweed already exists, skipping the download.
+make: Nothing to be done for 'kernel_pow_test'.
+Testing PowSimpleInt32
+Testing PowNegativeAndZeroValueInt32
+Testing PowSimpleFloat
+Testing PowNegativeFloat
+Testing PowBroadcastInt32
+Testing PowBroadcastFloat
+6/6 tests passed
+~~~ALL TESTS PASSED~~~
