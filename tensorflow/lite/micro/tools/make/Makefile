@@ -436,6 +436,7 @@ $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pad.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pad_common.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pooling.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pooling_common.cc \
+$(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/pow.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/prelu.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/prelu_common.cc \
 $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/quantize.cc \
