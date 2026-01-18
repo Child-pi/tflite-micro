@@ -27,6 +27,7 @@ limitations under the License.
 #include "tensorflow/lite/kernels/op_macros.h"
 #include "tensorflow/lite/micro/kernels/add.h"
 #include "tensorflow/lite/micro/kernels/kernel_util.h"
+#include "tensorflow/lite/micro/kernels/my_test/riscv_nn_util.h"
 #include "tensorflow/lite/micro/memory_helpers.h"
 #include "tensorflow/lite/micro/micro_log.h"
 
@@ -121,13 +122,17 @@ TfLiteStatus EvalAddQuantized(TfLiteContext* context, TfLiteNode* node,
             tflite::micro::GetTensorShape(output),
             tflite::micro::GetTensorData<int8_t>(output));
       } else {
-        reference_integer_ops::Add(
-            op_params, tflite::micro::GetTensorShape(input1),
+        tflite::micro::riscv::riscv_nn_ew_add_s8_asym(
             tflite::micro::GetTensorData<int8_t>(input1),
-            tflite::micro::GetTensorShape(input2),
             tflite::micro::GetTensorData<int8_t>(input2),
-            tflite::micro::GetTensorShape(output),
-            tflite::micro::GetTensorData<int8_t>(output));
+            op_params.input1_offset, op_params.input1_multiplier,
+            -op_params.input1_shift, op_params.input2_offset,
+            op_params.input2_multiplier, -op_params.input2_shift,
+            op_params.left_shift, tflite::micro::GetTensorData<int8_t>(output),
+            op_params.output_offset, op_params.output_multiplier,
+            -op_params.output_shift, op_params.quantized_activation_min,
+            op_params.quantized_activation_max,
+            tflite::micro::GetTensorShape(input1).FlatSize());
       }
       break;
     }
