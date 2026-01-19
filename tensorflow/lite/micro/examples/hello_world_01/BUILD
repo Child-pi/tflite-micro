@@ -17,12 +17,12 @@ package(
 tflm_cc_library(
     name = "model",
     srcs = [
-        "//tensorflow/lite/micro/examples/hello_world/models:generated_hello_world_float_model_cc",
-        "//tensorflow/lite/micro/examples/hello_world/models:generated_hello_world_int8_model_cc",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:generated_hello_world_float_model_cc",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:generated_hello_world_int8_model_cc",
     ],
     hdrs = [
-        "//tensorflow/lite/micro/examples/hello_world/models:generated_hello_world_float_model_hdr",
-        "//tensorflow/lite/micro/examples/hello_world/models:generated_hello_world_int8_model_hdr",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:generated_hello_world_float_model_hdr",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:generated_hello_world_int8_model_hdr",
     ],
 )
 
@@ -46,7 +46,7 @@ tflm_cc_test(
 py_binary(
     name = "evaluate",
     srcs = ["evaluate.py"],
-    data = ["//tensorflow/lite/micro/examples/hello_world/models:hello_world_float.tflite"],
+    data = ["//tensorflow/lite/micro/examples/hello_world_01/models:hello_world_float.tflite"],
     deps = [
         requirement("absl_py"),
         requirement("numpy"),
@@ -59,8 +59,8 @@ py_binary(
     name = "evaluate_test",
     srcs = ["evaluate_test.py"],
     data = [
-        "//tensorflow/lite/micro/examples/hello_world/models:hello_world_float.tflite",
-        "//tensorflow/lite/micro/examples/hello_world/models:hello_world_int8.tflite",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:hello_world_float.tflite",
+        "//tensorflow/lite/micro/examples/hello_world_01/models:hello_world_int8.tflite",
     ],
     deps = [
         ":evaluate",
