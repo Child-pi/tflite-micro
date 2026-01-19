@@ -1,0 +1,5 @@
+Testing SimpleHardSwishTestFloat
+Testing SimpleHardSwishTestInt8
+Testing SimpleHardSwishTestInt16
+3/3 tests passed
+~~~ALL TESTS PASSED~~~
